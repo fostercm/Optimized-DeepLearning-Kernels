@@ -19,7 +19,6 @@ torch::Tensor add_tensors(const torch::Tensor &a, const torch::Tensor &b) {
         b.data_ptr<float>(), 
         c.data_ptr<float>(), 
         n);
-    cudaDeviceSynchronize();
 
     return c;
 }
