@@ -1,2 +1,3 @@
 .v*
 *.so
+__pycache__/
