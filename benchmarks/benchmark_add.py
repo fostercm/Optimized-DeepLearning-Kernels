@@ -3,7 +3,7 @@ import fastkern as fk
 import torch.utils.benchmark as benchmark
 
 # Benchmarking function
-def benchmark_add(dim1, dim2, repetitions):
+def benchmark_add(dim1: int, dim2: int, repetitions: int) -> None:
     a = torch.randn((dim1, dim2), dtype=torch.float32, device='cuda')
     b = torch.randn((dim1, dim2), dtype=torch.float32, device='cuda')
 
