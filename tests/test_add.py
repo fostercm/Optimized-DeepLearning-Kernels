@@ -10,7 +10,7 @@ import pytest
     (1024, 2304),   # QKV projection bias
 ])
 
-def test_add(shape: Literal[1024]):
+def test_add(shape: Literal[1024]) -> None:
     a = torch.randn(shape, dtype=torch.float32, device='cuda')
     b = torch.randn(shape, dtype=torch.float32, device='cuda')
     c = fk.add(a, b)
