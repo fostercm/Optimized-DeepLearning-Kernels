@@ -55,12 +55,11 @@ def benchmark_mult(dim1: int, dim2: int, dim3: int, repetitions: int) -> None:
     
 # Run benchmarks for GPT-2 XL multiplication shapes
 shapes = [
-    # (1024, 1600, 6400),   # MLP up-projection
-    # (1024, 6400, 1600),   # MLP down-projection
-    # (1024, 64, 1024)      # Attention scoring
-    (1024, 256, 1024)
+    (1024, 1600, 6400),   # MLP up-projection
+    (1024, 6400, 1600),   # MLP down-projection
+    (1024, 64, 1024)      # Attention scoring
 ]
-repetitions = 10000
+repetitions = 100
 
 for dim1, dim2, dim3 in shapes:
     benchmark_mult(dim1, dim2, dim3, repetitions)
