@@ -1,6 +1,6 @@
 #include "add.h"
 
-__global__ void add_kernel(const float *a, const float *b, float *c, int n) {
+__global__ void add_kernel(const float *a, const float *b, float *c, const int n) {
     int tid = blockDim.x * blockIdx.x + threadIdx.x;
     if (tid < n) {
         c[tid] = a[tid] + b[tid];
