@@ -4,18 +4,24 @@ import os
 
 os.environ['TORCH_CUDA_ARCH_LIST'] = '8.6'
 
+extra_compile_args = {
+    "nvcc": ["-O3", "-g", "-lineinfo"]
+}
+
 ext_modules=[
     CUDAExtension(
         name="fastkern._add",
         sources=[
             "fastkern/add/add.cu"
-        ]
+        ],
+        extra_compile_args=extra_compile_args
     ),
     CUDAExtension(
         name="fastkern._mult",
         sources=[
             "fastkern/mult/mult.cu"
-        ]
+        ],
+        extra_compile_args=extra_compile_args
     )
 ]
 
