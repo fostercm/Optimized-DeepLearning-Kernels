@@ -1,8 +1,10 @@
 from setuptools import setup, find_packages
+from torch.cuda import get_device_capability
 from torch.utils.cpp_extension import BuildExtension, CUDAExtension
 import os
 
-os.environ['TORCH_CUDA_ARCH_LIST'] = '8.6'
+arch = '.'.join(map(str, get_device_capability(0)))
+os.environ['TORCH_CUDA_ARCH_LIST'] = arch
 
 extra_compile_args = {
     "nvcc": ["-O3", "-g", "-lineinfo"]
